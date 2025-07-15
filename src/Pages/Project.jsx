@@ -9,27 +9,31 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import PurpleShadow from "../components/ShadowEffect/PurpleShadow";
 import GreenShadow from "../components/ShadowEffect/GreenShadow";
 import Aos from "aos";
+import "aos/dist/aos.css";
 
 const projects = [
   {
     title: "Simple Small Food App",
-    description: "A minimal and responsive food ordering app built with ReactJS and TailwindCSS. It fetches dynamic food data from an API and displays them in a clean UI.",
+    description:
+      "A minimal and responsive food ordering app built with ReactJS and TailwindCSS. It fetches dynamic food data from an API and displays them in a clean UI.",
     tech: ["ReactJS", "Tailwind", "API"],
     live: "https://smallfoodapp.vercel.app/",
     github: "https://github.com/nayemislam33046/smallfoodapps",
     image: "https://i.imgur.com/kayDzjQ.jpeg",
   },
   {
-    title: "LearnTrack Pro Project (Fullstack Laravel/Reactjs) ",
-    description: "A fullstack Laravel-ReactJS blog app with dark mode, full authentication, article/category/tag CRUD, and a responsive admin panel.",
+    title: "LearnTrack Pro Project (Fullstack Laravel/Reactjs)",
+    description:
+      "A fullstack Laravel-ReactJS blog app with dark mode, full authentication, article/category/tag CRUD, and a responsive admin panel.",
     tech: ["Laravel", "ReactJS", "MySQL", "Authorization", "REST Api", "TailwindCSS"],
-    live: "#",
+    live: null,
     github: "https://github.com/nayemislam33046/LearnTrack",
     image: "https://i.imgur.com/QfKSLaX.jpeg",
   },
   {
     title: "E-commerce UI (Practice Project)",
-    description: "Responsive e-commerce frontend built for practice using a Bootstrap theme as a base. Recreated using ReactJS and TailwindCSS for a modern UI experience.",
+    description:
+      "Responsive e-commerce frontend built for practice using a Bootstrap theme as a base. Recreated using ReactJS and TailwindCSS for a modern UI experience.",
     tech: ["ReactJS", "TailwindCSS"],
     live: "https://responsive-site-gold-theta.vercel.app",
     github: "https://github.com/nayemislam33046/Responsive-site.git",
@@ -37,9 +41,10 @@ const projects = [
   },
   {
     title: "Fullstack Laravel Task Manager Project",
-    description: "A fullstack task manager application built with Laravel and Blade for server-side rendering. Includes user authentication, task CRUD operations, and a responsive UI styled with TailwindCSS.",
+    description:
+      "A fullstack task manager application built with Laravel and Blade for server-side rendering. Includes user authentication, task CRUD operations, and a responsive UI styled with TailwindCSS.",
     tech: ["Laravel and Blade", "MySQL", "Authorization", "TailwindCSS"],
-    live: "#",
+    live: null,
     github: "https://github.com/nayemislam33046/task-manager",
     image: "https://i.imgur.com/HjkUkg3.jpeg",
   },
@@ -59,12 +64,15 @@ export default function Projects() {
       className="p-6 md:p-10 mt-20 text-gray-900 dark:text-white rounded-xl shadow-xl relative"
       id="project"
     >
+      {/* Background Shadows */}
       <div className="absolute bottom-0 right-10 -z-30">
         <PurpleShadow />
       </div>
       <div className="absolute top-5 left-5 -z-30">
         <GreenShadow />
       </div>
+
+      {/* Title */}
       <h2 className="text-2xl font-bold mb-6 text-center">Projects</h2>
 
       {/* Swiper */}
@@ -94,7 +102,7 @@ export default function Projects() {
       >
         {projects.map((project, index) => (
           <SwiperSlide key={index}>
-            <div className="border border-gray-300 dark:border-gray-700 p-5 rounded-lg hover:shadow-md transition h-full">
+            <div className="border border-gray-300 dark:border-gray-700 p-5 rounded-lg hover:shadow-md transition h-full bg-white dark:bg-gray-900">
               <img
                 src={project.image}
                 alt={project.title}
@@ -103,6 +111,7 @@ export default function Projects() {
                   e.target.src = fallbackImage;
                 }}
                 className="rounded-md mb-4 w-full h-48 object-cover"
+                loading="lazy"
               />
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
               <p className="text-sm text-gray-800 dark:text-gray-300 mb-3">
@@ -118,13 +127,13 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="flex gap-3">
-                {project.live && project.live !== "#" && (
+              <div className="flex gap-3 flex-wrap">
+                {project.live && (
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block text-sm text-blue-700 hover:underline px-2 py-1"
+                    className="inline-block text-sm text-blue-600 dark:text-blue-400 hover:underline px-2 py-1"
                     aria-label={`Live demo of ${project.title}`}
                   >
                     Live Demo
@@ -134,7 +143,7 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-sm text-blue-700 hover:underline px-2 py-1"
+                  className="inline-block text-sm text-blue-600 dark:text-blue-400 hover:underline px-2 py-1"
                   aria-label={`GitHub repository of ${project.title}`}
                 >
                   GitHub
@@ -151,13 +160,15 @@ export default function Projects() {
           className="custom-prev pointer-events-auto bg-violet-600 text-white p-3 rounded-full hover:bg-violet-700 transition"
           aria-label="Previous slide"
         >
-          <FaArrowLeft />
+          <FaArrowLeft aria-hidden="true" />
+          <span className="sr-only">Previous slide</span>
         </button>
         <button
           className="custom-next pointer-events-auto bg-violet-600 text-white p-3 rounded-full hover:bg-violet-700 transition"
           aria-label="Next slide"
         >
-          <FaArrowRight />
+          <FaArrowRight aria-hidden="true" />
+          <span className="sr-only">Next slide</span>
         </button>
       </div>
 

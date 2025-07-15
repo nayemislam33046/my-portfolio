@@ -5,43 +5,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Nayem Islam | Fullstack Web Developer</title>
-<meta name="description" content="I'm Nayem Islam, a frontend developer passionate about building beautiful and functional web interfaces using React, Tailwind, and modern JavaScript.">
+  <title>Nayem Islam | Fullstack Web Developer</title>
+  <meta name="description"
+    content="I'm Nayem Islam, a fullstack developer passionate about building modern and responsive web applications using React, Laravel, Tailwind, and JavaScript.">
 
-<!-- Keywords for SEO -->
-<meta name="keywords" content="Nayem Islam, frontend developer, web developer, portfolio, React developer, Tailwind, JavaScript, Bangladesh developer">
+  <!-- Keywords for SEO -->
+  <meta name="keywords"
+    content="Nayem Islam, fullstack developer, web developer, React developer, Laravel developer, portfolio, Tailwind, JavaScript, Bangladesh developer">
 
-<!-- Author -->
-<meta name="author" content="Nayem Islam">
+  <!-- Author -->
+  <meta name="author" content="Nayem Islam" />
 
-<!-- Open Graph for Facebook, LinkedIn etc. -->
-<meta property="og:title" content="Nayem Islam | Frontend Developer">
-<meta property="og:description" content="Check out my portfolio showcasing modern, responsive web apps built with React and Tailwind.">
-<meta property="og:image" content="https://yourdomain.com/preview.jpg"> <!-- Optional, replace with real image URL -->
-<meta property="og:url" content="https://my-portfolio-beta-six-62.vercel.app/">
-<meta property="og:type" content="website">
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:title" content="Nayem Islam | Fullstack Web Developer">
+  <meta property="og:description"
+    content="Check out Nayem Islam's portfolio showcasing modern, fullstack web apps built with React, Laravel, and Tailwind.">
+  <meta property="og:image" content="https://yourdomain.com/preview.jpg"> <!-- Replace with actual image -->
+  <meta property="og:url" content="https://my-portfolio-beta-six-62.vercel.app/">
+  <meta property="og:type" content="website">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nayem Islam | Frontend Developer">
-<meta name="twitter:description" content="Frontend developer specializing in responsive and modern web apps using React, Tailwind, and JavaScript.">
-<meta name="twitter:image" content="https://yourdomain.com/preview.jpg"> <!-- Optional -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nayem Islam | Fullstack Web Developer">
+  <meta name="twitter:description"
+    content="Fullstack developer building modern and responsive web applications with React, Laravel, and Tailwind.">
+  <meta name="twitter:image" content="https://yourdomain.com/preview.jpg"> <!-- Replace -->
 
+  <!-- Favicon (optional but recommended) -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
 </head>
 
 <body>
   <div id="root"></div>
+
+  <!-- React App Entry -->
   <script type="module" src="/src/main.jsx"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
     (function () {
-      emailjs.init({
-        publicKey: "yzn4wijoEK6qckiru",
-      });
+      emailjs.init("yzn4wijoEK6qckiru");
     })();
   </script>
 </body>

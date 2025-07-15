@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-const ParallaxLayer = ({ src, offset, color }) => {
+const ParallaxLayer = ({ src, offset, color,iconName }) => {
   const layerRef = useRef();
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
@@ -16,7 +16,7 @@ const ParallaxLayer = ({ src, offset, color }) => {
   }, []);
   return (
     <div ref={layerRef} className={`${color}`}>
-      <img src={src} alt="" />
+      <img src={src} alt={iconName} loading="lazy" className="object-cover"/>
     </div>
   );
 };

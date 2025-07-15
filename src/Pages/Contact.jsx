@@ -4,14 +4,19 @@ import emailjs from "@emailjs/browser";
 export default function Contact() {
   const form = useRef();
   const [status, setStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   const sendEmail = (e) => {
     e.preventDefault();
+    setLoading(true);
+    setStatus(null);
+
     emailjs
       .sendForm(
-        "service_3a2xb1v",
-        "template_04wol1n",
+        "service_3a2xb1v",       
+        "template_04wol1n",     
         form.current,
-        "yzn4wijoEK6qckiru"
+        "yzn4wijoEK6qckiru"   
       )
       .then(
         () => {
@@ -22,10 +27,17 @@ export default function Contact() {
           console.error(error);
           setStatus("Failed to send message. Try again later.");
         }
-      );
+      )
+      .finally(() => {
+        setLoading(false);
+      });
   };
+
   return (
-    <div className="p-6 mt-20 md:p-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-xl shadow-xl" id="contact">
+    <div
+      className="p-6 mt-20 md:p-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-xl shadow-xl"
+      id="contact"
+    >
       <h2 className="text-2xl font-bold mb-6 text-center">Contact Me</h2>
 
       <form
@@ -33,6 +45,7 @@ export default function Contact() {
         onSubmit={sendEmail}
         className="space-y-4 max-w-xl mx-auto"
       >
+        {/* Name */}
         <div>
           <label className="block mb-1 text-sm font-medium">Name</label>
           <input
@@ -43,6 +56,8 @@ export default function Contact() {
             placeholder="Enter Your Name Here"
           />
         </div>
+
+        {/* Email */}
         <div>
           <label className="block mb-1 text-sm font-medium">Email</label>
           <input
@@ -53,6 +68,8 @@ export default function Contact() {
             placeholder="Enter Your Email Here"
           />
         </div>
+
+        {/* Message */}
         <div>
           <label className="block mb-1 text-sm font-medium">Message</label>
           <textarea
@@ -63,14 +80,20 @@ export default function Contact() {
             placeholder="Write Message Here..."
           ></textarea>
         </div>
+
+        {/* Submit Button */}
         <button
           type="submit"
-          className="bg-violet-600 hover:bg-violet-700 text-white font-medium px-6 py-2 rounded-lg w-full"
+          disabled={loading}
+          className={`bg-violet-600 hover:bg-violet-700 text-white font-medium px-6 py-2 rounded-lg w-full transition ${loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
         >
-          Send Message
+          {loading ? "Sending..." : "Send Message"}
         </button>
+
+        {/* Status Message */}
         {status && (
-          <p className="mt-4 text-sm">
+          <p className="mt-4 text-sm text-center">
             {status.includes("successfully") ? (
               <span className="text-green-500">{status}</span>
             ) : (
