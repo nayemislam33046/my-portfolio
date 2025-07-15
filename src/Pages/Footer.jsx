@@ -20,16 +20,16 @@ export default function Footer() {
           Easiest way to reach me is via email or social links. Open for freelance or full-time roles.
         </p>
         <div className="flex gap-4 text-xl mb-8">
-          <a href="https://www.facebook.com/nayemahmed330466" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
+          <a href="https://www.facebook.com/nayemahmed330466" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500" aria-label="Visit my Facebook profile">
             <FaFacebookF />
           </a>
-          <a href="https://www.linkedin.com/in/nayem33046/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
+          <a href="https://www.linkedin.com/in/nayem33046/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500" aria-label="Visit my Linkedin profile">
             <FaLinkedinIn />
           </a>
-          <a href="https://github.com/nayemislam33046" target="_blank" rel="noopener noreferrer" className="">
+          <a href="https://github.com/nayemislam33046" target="_blank" rel="noopener noreferrer" className="" aria-label="Visit my GitHub profile">
             <FaGithub />
           </a>
-          <a href="https://www.instagram.com/nayemahmed3304" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+          <a href="https://www.instagram.com/nayemahmed3304" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500" aria-label="Visit my Instagram profile">
             <FaInstagram />
           </a>
         </div>

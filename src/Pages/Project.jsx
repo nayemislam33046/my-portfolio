@@ -29,8 +29,7 @@ const projects = [
   },
   {
     title: "E-commerce UI (Practice Project)",
-    description:
-      "Responsive e-commerce frontend built for practice using a Bootstrap theme as a base. Recreated using ReactJS and TailwindCSS for a modern UI experience.",
+    description: "Responsive e-commerce frontend built for practice using a Bootstrap theme as a base. Recreated using ReactJS and TailwindCSS for a modern UI experience.",
     tech: ["ReactJS", "TailwindCSS"],
     live: "https://responsive-site-gold-theta.vercel.app",
     github: "https://github.com/nayemislam33046/Responsive-site.git",
@@ -54,8 +53,12 @@ export default function Projects() {
       easing: "ease-in-sine",
     });
   }, []);
+
   return (
-    <div className="p-6 md:p-10 mt-20 text-gray-900 dark:text-white rounded-xl shadow-xl relative" id="project">
+    <div
+      className="p-6 md:p-10 mt-20 text-gray-900 dark:text-white rounded-xl shadow-xl relative"
+      id="project"
+    >
       <div className="absolute bottom-0 right-10 -z-30">
         <PurpleShadow />
       </div>
@@ -86,7 +89,8 @@ export default function Projects() {
           868: { slidesPerView: 2 },
         }}
         className="relative"
-        data-aos="flip-right" data-aos-once={true}
+        data-aos="flip-right"
+        data-aos-once={true}
       >
         {projects.map((project, index) => (
           <SwiperSlide key={index}>
@@ -101,7 +105,7 @@ export default function Projects() {
                 className="rounded-md mb-4 w-full h-48 object-cover"
               />
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
+              <p className="text-sm text-gray-800 dark:text-gray-300 mb-3">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
@@ -119,8 +123,9 @@ export default function Projects() {
                   <a
                     href={project.live}
                     target="_blank"
-                    className="text-sm text-blue-500 hover:underline"
                     rel="noopener noreferrer"
+                    className="inline-block text-sm text-blue-700 hover:underline px-2 py-1"
+                    aria-label={`Live demo of ${project.title}`}
                   >
                     Live Demo
                   </a>
@@ -128,8 +133,9 @@ export default function Projects() {
                 <a
                   href={project.github}
                   target="_blank"
-                  className="text-sm text-blue-500 hover:underline"
                   rel="noopener noreferrer"
+                  className="inline-block text-sm text-blue-700 hover:underline px-2 py-1"
+                  aria-label={`GitHub repository of ${project.title}`}
                 >
                   GitHub
                 </a>
@@ -138,15 +144,23 @@ export default function Projects() {
           </SwiperSlide>
         ))}
       </Swiper>
+
       {/* Custom Arrows */}
       <div className="absolute top-1/2 left-0 right-0 flex justify-between px-4 z-10 pointer-events-none">
-        <button className="custom-prev pointer-events-auto bg-violet-600 text-white p-2 rounded-full hover:bg-violet-700 transition">
+        <button
+          className="custom-prev pointer-events-auto bg-violet-600 text-white p-3 rounded-full hover:bg-violet-700 transition"
+          aria-label="Previous slide"
+        >
           <FaArrowLeft />
         </button>
-        <button className="custom-next pointer-events-auto bg-violet-600 text-white p-2 rounded-full hover:bg-violet-700 transition">
+        <button
+          className="custom-next pointer-events-auto bg-violet-600 text-white p-3 rounded-full hover:bg-violet-700 transition"
+          aria-label="Next slide"
+        >
           <FaArrowRight />
         </button>
       </div>
+
       {/* Custom Pagination */}
       <div className="custom-pagination mt-10 flex justify-center space-x-2"></div>
     </div>

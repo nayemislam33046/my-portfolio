@@ -69,10 +69,10 @@ const HomePage = () => {
               Contact Me
             </a>
             <div className="flex gap-3 text-xl">
-              <a href="https://www.facebook.com/nayemahmed330466" className="text-blue-500"><FaFacebook /></a>
-              <a href="https://www.instagram.com/nayemahmed3304" className="text-orange-500"><FaInstagram /></a>
-              <a href="https://www.linkedin.com/in/nayem33046" className="text-blue-500"><FaLinkedin /></a>
-              <a href="https://github.com/nayemislam33046" className="text-white"><FaGithub /></a>
+              <a href="https://www.facebook.com/nayemahmed330466" className="text-blue-500" aria-label="Visit my Facebook profile"><FaFacebook /></a>
+              <a href="https://www.instagram.com/nayemahmed3304" className="text-orange-500" aria-label="Visit my Instagram profile"><FaInstagram /></a>
+              <a href="https://www.linkedin.com/in/nayem33046" className="text-blue-500" aria-label="Visit my Linkedin profile"><FaLinkedin /></a>
+              <a href="https://github.com/nayemislam33046" className="text-white" aria-label="Visit my GitHub profile"><FaGithub /></a>
             </div>
           </div>
         </div>
