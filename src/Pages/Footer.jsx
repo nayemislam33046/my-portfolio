@@ -26,7 +26,7 @@ export default function Footer() {
         {/* Social Icons */}
         <div className="flex gap-4 text-xl mb-8">
           <a
-            href="https://www.facebook.com/nayemahmed330466"
+            href="https://www.facebook.com/nayemtruthnes"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-500"
@@ -47,13 +47,13 @@ export default function Footer() {
             href="https://github.com/nayemislam33046"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white"
+            className="hover:text-gray-700 dark:hover:text-gray-300"
             aria-label="Visit my GitHub profile"
           >
             <FaGithub />
           </a>
           <a
-            href="https://www.instagram.com/nayemahmed3304"
+            href="https://www.instagram.com/nayemtruthness"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-orange-500"

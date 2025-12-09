@@ -43,7 +43,7 @@ export default function Header({ darkMode, setDarkMode }) {
   };
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-6 px-4 backdrop-blur-lg transition-transform duration-300 border-b bg-transparent border-gray-700 ${navbarVisible ? "translate-y-0" : "-translate-y-full"
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-6 px-4 xl:px-6 backdrop-blur-lg transition-transform duration-300 border-b bg-transparent border-gray-700 ${navbarVisible ? "translate-y-0" : "-translate-y-full"
         }`}
     >
       <div className="text-2xl md:text-3xl font-bold tracking-wider">
