@@ -12,7 +12,17 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 const projects = [
-  {
+
+ {
+    title: "Fullstack Real-Time Chat Application",
+    description:
+      "A full-stack real-time chat app built with Laravel 12, ReactJS, and PusherJS, featuring instant messaging, Google Drive file storage, and a responsive modern UI.",
+    tech: ["Laravel 12","PusherJS","MySQL", "Authorization", "REST Api","ReactJS", "Tailwind", "API"],
+    live: "https://chat-app-frontend-six-red.vercel.app",
+    github: "https://github.com/nayemislam33046/fullstack-realtime-chat-app/tree/master",
+    image: "https://i.ibb.co.com/zW7pTPVS/screen03.jpg",
+  }
+  ,{
     title: "Simple Small Food App",
     description:
       "A minimal and responsive food ordering app built with ReactJS and TailwindCSS. It fetches dynamic food data from an API and displays them in a clean UI.",
@@ -26,8 +36,8 @@ const projects = [
     description:
       "A fullstack Laravel-ReactJS blog app with dark mode, full authentication, article/category/tag CRUD, and a responsive admin panel.",
     tech: ["Laravel", "ReactJS", "MySQL", "Authorization", "REST Api", "TailwindCSS"],
-    live: null,
-    github: "https://github.com/nayemislam33046/LearnTrack",
+    live: "https://learntrack-frontend.vercel.app",
+    github: "https://github.com/nayemislam33046/LearnTrack-Pro.git",
     image: "https://i.imgur.com/QfKSLaX.jpeg",
   },
   {
@@ -44,7 +54,7 @@ const projects = [
     description:
       "A fullstack task manager application built with Laravel and Blade for server-side rendering. Includes user authentication, task CRUD operations, and a responsive UI styled with TailwindCSS.",
     tech: ["Laravel and Blade", "MySQL", "Authorization", "TailwindCSS"],
-    live: null,
+    live: "https://nayem.kesug.com/",
     github: "https://github.com/nayemislam33046/task-manager",
     image: "https://i.imgur.com/HjkUkg3.jpeg",
   },
