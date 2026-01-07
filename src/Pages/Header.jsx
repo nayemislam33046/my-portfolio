@@ -43,18 +43,22 @@ export default function Header({ darkMode, setDarkMode }) {
   };
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-6 px-4 xl:px-6 backdrop-blur-lg transition-transform duration-300 border-b bg-transparent border-gray-700 ${navbarVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-6 px-4 xl:px-6 backdrop-blur-lg transition-transform duration-300 border-b bg-transparent border-gray-700 ${navbarVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="text-2xl md:text-3xl font-bold tracking-wider">
-        <a href="/" className={`flex items-center uppercase ${styleAdjust ? 'md:text-white dark:text-white' : 'text-slate-950 dark:text-white'}`}>
+        <a href="/" className={`flex items-center gap-2 uppercase ${styleAdjust ? 'md:text-white dark:text-white' : 'text-slate-950 dark:text-white'}`}>
           <span className="text-green-600 font-thin">
             <FaLessThan />
           </span>
-          Nayem
+          <img
+            src="./Nayem_logo.png"
+            alt="Nayem Logo"
+            className="w-28 h-14"
+          />
           <span className="text-green-500 font-thin flex items-center">
             /<FaGreaterThan />
           </span>
+
         </a>
       </div>
       {/* Mobile Menu Button */}
@@ -94,7 +98,7 @@ export default function Header({ darkMode, setDarkMode }) {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="absolute top-16 mx-4 left-4 w-[90%] bg-black text-white rounded-lg p-4 shadow-lg flex flex-col items-start gap-4 md:hidden z-50">
+        <div className="absolute top-20 mx-4 left-4 w-[90%] dark:bg-gray-950 bg-gray-100 border-1 dark:text-white text-slate-950 rounded-lg p-4 shadow-lg flex flex-col items-start gap-4 md:hidden z-50">
           {["project", "skills", "about", "contact"].map((link) => (
             <a
               key={link}

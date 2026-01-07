@@ -12,7 +12,7 @@ import Contact from "./Pages/Contact";
 import Footer from "./Pages/Footer";
 import About from "./Pages/About";
 export default function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [init, setInit] = useState(false);
 
   useEffect(() => {
