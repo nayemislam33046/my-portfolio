@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaBolt, FaMobileAlt, FaLightbulb, FaAtom } from 'react-icons/fa';
 
 const features = [

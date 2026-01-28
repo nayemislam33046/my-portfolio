@@ -12,8 +12,8 @@ import Contact from "./Pages/Contact";
 import Footer from "./Pages/Footer";
 import About from "./Pages/About";
 export default function App() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [init, setInit] = useState(false);
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [init, setInit] = useState<boolean>(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {

@@ -44,7 +44,7 @@ export default function About() {
             About
           </h2>
           <motion.p
-            key={expanded}
+            key={expanded ? 'full' : 'half'}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}

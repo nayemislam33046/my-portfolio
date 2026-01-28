@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 
-export default function Header({ darkMode, setDarkMode }) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [navbarVisible, setNavbarVisible] = useState(true);
-  const [styleAdjust, setStyleAdjust] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+type darkModeProps = {
+  darkMode: boolean;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function Header({ darkMode, setDarkMode }: darkModeProps) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [navbarVisible, setNavbarVisible] = useState<boolean>(true);
+  const [styleAdjust, setStyleAdjust] = useState<boolean>(true);
+  const [lastScrollY, setLastScrollY] = useState<number>(0);
 
   //darkmode functionality
   useEffect(() => {
@@ -38,7 +43,7 @@ export default function Header({ darkMode, setDarkMode }) {
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
-    localStorage.setItem("darkMode", newMode);
+    localStorage.setItem("darkMode", String(newMode));
     document.documentElement.classList.toggle("dark", newMode);
   };
   return (

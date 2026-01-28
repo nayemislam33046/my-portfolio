@@ -1,5 +1,5 @@
 import Aos from "aos";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import htmlIcon from "../assets/html_icon.svg";
 import cssIcon from "../assets/css_icon.svg";
@@ -22,6 +22,16 @@ import CommunicationIcon from "../assets/communication-icon.svg"
 import CollaborationIcon from "../assets/collaboration-icon.svg"
 import TimeManagementIcon from "../assets/time-management-icon.svg"
 import ProblemSolvingIcon from "../assets/bulb-icon.svg"
+
+interface Skill {
+  name: string;
+  icon: string;
+};
+
+type SkillCategory = "Frontend" | "Backend" | "Tools" | "Soft Skills";
+
+type SkillSetsType = Record<SkillCategory, Skill[]>;
+
 
 const skillSets = {
   Frontend: [
@@ -56,7 +66,7 @@ const skillSets = {
 };
 
 export default function MySkills() {
-  const [activeTab, setActiveTab] = useState("Frontend");
+  const [activeTab, setActiveTab] = useState<SkillCategory>("Frontend");
 
   useEffect(() => {
     Aos.init({
@@ -86,14 +96,14 @@ export default function MySkills() {
           role="tablist"
           aria-label="Skill categories"
         >
-          {Object.keys(skillSets).map((tab) => (
+          {(Object.keys(skillSets) as SkillCategory[]).map((tab) => (
             <button
               key={tab}
               role="tab"
               aria-selected={activeTab === tab}
               aria-controls={`panel-${tab}`}
               id={`tab-${tab}`}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => setActiveTab(tab as SkillCategory)}
               className={`px-2 py-1 md:px-4 md:py-1 rounded-lg border text-xs sm:text-sm md:text-base transition-all duration-200 ${
                 activeTab === tab
                   ? "bg-violet-600 border-violet-400 text-white"

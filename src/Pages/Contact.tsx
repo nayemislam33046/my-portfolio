@@ -1,27 +1,30 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
-  const form = useRef();
-  const [status, setStatus] = useState(null);
-  const [loading, setLoading] = useState(false);
+  // Form ref typing
+  const form = useRef<HTMLFormElement | null>(null);
+  const [status, setStatus] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!form.current) return;
+
     setLoading(true);
     setStatus(null);
 
     emailjs
       .sendForm(
-        "service_3a2xb1v",       
-        "template_04wol1n",     
+        "service_3a2xb1v",       // Service ID
+        "template_04wol1n",      // Template ID
         form.current,
-        "yzn4wijoEK6qckiru"   
+        "yzn4wijoEK6qckiru"      // Public Key
       )
       .then(
         () => {
           setStatus("Message sent successfully! ✅");
-          form.current.reset();
+          form.current?.reset();
         },
         (error) => {
           console.error(error);
@@ -75,7 +78,7 @@ export default function Contact() {
           <textarea
             name="message"
             required
-            rows="5"
+            rows={5}
             className="w-full px-4 py-2 rounded-lg border dark:border-gray-700 bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-violet-500"
             placeholder="Write Message Here..."
           ></textarea>
@@ -85,8 +88,9 @@ export default function Contact() {
         <button
           type="submit"
           disabled={loading}
-          className={`bg-violet-600 hover:bg-violet-700 text-white font-medium px-6 py-2 rounded-lg w-full transition ${loading ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+          className={`bg-violet-600 hover:bg-violet-700 text-white font-medium px-6 py-2 rounded-lg w-full transition ${
+            loading ? "opacity-50 cursor-not-allowed" : ""
+          }`}
         >
           {loading ? "Sending..." : "Send Message"}
         </button>
