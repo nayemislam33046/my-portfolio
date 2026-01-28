@@ -65,15 +65,15 @@ export default function Footer() {
 
         {/* Contact Boxes */}
         <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-3">
-          <div className="bg-violet-600 dark:bg-violet-800 text-white p-6 rounded-lg flex items-center gap-4">
+          <div className="bg-violet-600 dark:bg-violet-800 text-white sm:p-6 p-3 rounded-lg flex items-center gap-2 sm:gap-4">
             <PiGlobeLight size={28} />
-            <span className="break-all text-sm lg:text-base">
+            <span className="break-all text-[12px] sm:text-sm lg:text-base">
               Let’s build something great together
             </span>
           </div>
-          <div className="bg-violet-600 dark:bg-violet-800 text-white p-6 rounded-lg flex items-center gap-4">
+          <div className="bg-violet-600 dark:bg-violet-800 text-white sm:p-6 p-3 rounded-lg flex items-center sm:gap-4 gap-2">
             <MdEmail size={28} />
-            <span className="break-all text-sm lg:text-base">
+            <span className="break-all text-[12px] sm:text-sm lg:text-base">
               {"nayemtruthness" + "@gmail.com"}
             </span>
           </div>

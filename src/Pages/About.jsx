@@ -22,7 +22,7 @@ export default function About() {
 
   return (
     <motion.section
-      className="relative px-4 py-16 sm:px-12 lg:px-24 mt-[80px] md:mt-0 min-h-screen md:h-[90vh] flex items-center justify-center"
+      className="relative px-4 sm:py-16 sm:px-12 lg:px-24 mt-[30px] md:mt-0 min-h-screen md:h-[90vh] flex items-center justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -39,7 +39,7 @@ export default function About() {
       {/* Main Content */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 w-full max-w-6xl">
         {/* Left Text Section */}
-        <div className="w-full md:w-1/2 text-start" data-aos="fade-right" data-aos-once={true}>
+        <div className="w-full md:w-1/2 text-start" data-aos="fade-down" data-aos-once={true}>
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold mb-4 text-gray-800 dark:text-white text-center md:text-start md:border-b-2 md:border-green-500 md:inline-block md:pb-1">
             About
           </h2>
@@ -63,7 +63,7 @@ export default function About() {
         </div>
 
         {/* Right Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-once={true}>
+        <div className="w-full md:w-1/2 flex justify-center" data-aos="fade-up" data-aos-once={true}>
           <img
             src={aboutbg}
             alt="Illustration representing Nayem's web development skills"

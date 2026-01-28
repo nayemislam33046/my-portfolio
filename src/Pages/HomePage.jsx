@@ -28,7 +28,7 @@ const HomePage = () => {
   }, []);
   return (
     <div
-      className="relative flex items-center justify-center md:h-[100vh] h-[150vh]"
+      className="relative flex items-center justify-center h-[100vh] pt-[100px]"
       style={{
         backgroundImage: isMd
           ? `linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,1.9)), url('/coading_1.webp')`

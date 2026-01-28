@@ -85,7 +85,7 @@ export default function Header({ darkMode, setDarkMode }) {
         >
           {darkMode ? "☀️" : "🌙"}
         </button>
-        {["project", "skills", "about", "contact"].map((link) => (
+        {["project", "service","skills", "about", "contact"].map((link) => (
           <a
             key={link}
             href={`#${link}`}

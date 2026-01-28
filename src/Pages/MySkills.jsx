@@ -1,31 +1,57 @@
 import Aos from "aos";
 import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css";
+import htmlIcon from "../assets/html_icon.svg";
+import cssIcon from "../assets/css_icon.svg";
+import jsIcon from "../assets/javascript.svg";
+import reactIcon from "../assets/reactjs_icon.svg";
+import nextIcon from "../assets/Next-icon.svg";
+import phpIcon from "../assets/php_icon.svg";
+import BootstrapIcon from "../assets/bootstrap_icon.svg";
+import TailwindIcon from "../assets/tailwind-icon.svg"
+import LaravelIcon from "../assets/laravel-brands.svg"
+import MysqlIcon from "../assets/mysql-icon.svg"
+import PostgresIcon from "../assets/PostgreSQL.svg"
+import GithubIcon from "../assets/github-icon.svg"
+import VscodeIcon from "../assets/vs-code-icon.svg"
+import PostManIcon from "../assets/postman-icon.svg"
+import NpmIcon from "../assets/npm-icon.svg"
+import ApiIcon from "../assets/api-icon.svg"
+import TypescriptIcon from "../assets/typescript_icon.svg"
+import CommunicationIcon from "../assets/communication-icon.svg"
+import CollaborationIcon from "../assets/collaboration-icon.svg"
+import TimeManagementIcon from "../assets/time-management-icon.svg"
+import ProblemSolvingIcon from "../assets/bulb-icon.svg"
 
 const skillSets = {
   Frontend: [
-    { name: "HTML5", percent: 95 },
-    { name: "CSS3 (Tailwind,Bootstrap)", percent: 90 },
-    { name: "JavaScript (ES6+)", percent: 88 },
-    { name: "ReactJS", percent: 85 },
+    { name: "HTML5", icon: htmlIcon },
+    { name: "CSS3", icon: cssIcon },
+    { name: "JavaScript", icon: jsIcon },
+    { name: "Typescript", icon: TypescriptIcon },
+    { name: "Bootstrap", icon: BootstrapIcon },
+    { name: "Tailwind CSS", icon: TailwindIcon },
+    { name: "ReactJS", icon: reactIcon },
+    { name: "NextJS", icon: nextIcon },
   ],
   Backend: [
-    { name: "PHP", percent: 90 },
-    { name: "Laravel", percent: 88 },
-    { name: "MySQL", percent: 85 },
-    { name: "REST API", percent: 91 },
+    { name: "PHP", icon: phpIcon },
+    { name: "Laravel", icon: LaravelIcon },
+    { name: "MySQL", icon: MysqlIcon },
+    { name: "PostgreSQL", icon: PostgresIcon },
+    { name: "REST API", icon: ApiIcon },
   ],
   Tools: [
-    { name: "Git & GitHub", percent: 88 },
-    { name: "VS Code", percent: 95 },
-    { name: "Postman", percent: 90 },
-    { name: "Composer & NPM", percent: 86 },
+    { name: "Git & GitHub", icon: GithubIcon },
+    { name: "VS Code", icon: VscodeIcon },
+    { name: "Postman", icon: PostManIcon },
+    { name: "Composer & NPM", icon: NpmIcon },
   ],
   "Soft Skills": [
-    { name: "Communication", percent: 90 },
-    { name: "Team Collaboration", percent: 88 },
-    { name: "Problem Solving", percent: 85 },
-    { name: "Time Management", percent: 87 },
+    { name: "Communication", icon: CommunicationIcon },
+    { name: "Team Collaboration", icon: CollaborationIcon },
+    { name: "Problem Solving", icon: ProblemSolvingIcon },
+    { name: "Time Management", icon: TimeManagementIcon },
   ],
 };
 
@@ -42,7 +68,7 @@ export default function MySkills() {
 
   return (
     <section
-      className="p-6 md:p-10 mt-28 md:mt-0 bg-gradient-to-br from-white via-gray-100 to-white dark:from-[#0f0f0f] dark:via-[#121212] dark:to-[#0f0f0f] rounded-xl shadow-xl text-white"
+      className="p-6 md:p-10 mt-28 md:mt-0 bg-gradient-to-br from-white via-gray-100 to-white dark:from-[#010B13] dark:via-[#121212] dark:to-[#301934] rounded-xl shadow-xl text-white"
       id="skills"
     >
       <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white text-center">
@@ -50,7 +76,7 @@ export default function MySkills() {
       </h2>
 
       <div
-        className="flex items-center md:flex-row flex-col gap-6"
+        className="flex items-start md:flex-row flex-col gap-8 pt-5"
         data-aos="fade-right"
         data-aos-once={true}
       >
@@ -71,7 +97,7 @@ export default function MySkills() {
               className={`px-2 py-1 md:px-4 md:py-1 rounded-lg border text-xs sm:text-sm md:text-base transition-all duration-200 ${
                 activeTab === tab
                   ? "bg-violet-600 border-violet-400 text-white"
-                  : "bg-transparent border-gray-500 text-slate-900 dark:text-white hover:bg-violet-700"
+                  : "bg-transparent border-gray-500 text-slate-900 dark:text-white hover:bg-violet-300 "
               }`}
             >
               {tab}
@@ -88,20 +114,32 @@ export default function MySkills() {
           data-aos="fade-left"
           data-aos-once={true}
         >
-          {skillSets[activeTab].map((skill) => (
-            <div key={skill.name}>
-              <div className="flex justify-between text-sm mb-1 text-gray-900 dark:text-white">
-                <span>{skill.name}</span>
-                <span>{skill.percent}%</span>
-              </div>
-              <div className="w-full bg-gray-300 dark:bg-gray-800 rounded-full h-2.5">
-                <div
-                  className="bg-green-500 dark:bg-green-600 h-2.5 rounded-full transition-all duration-500"
-                  style={{ width: `${skill.percent}%` }}
-                ></div>
-              </div>
-            </div>
+
+          <div className="flex justify-center md:justify-start items-center flex-wrap gap-4">
+            {skillSets[activeTab].map((skill) => (
+            <div
+              key={skill.name}
+              className="flex items-center flex-col border border-gray-300 dark:border-gray-700 gap-2 min-w-28 sm:min-w-36 bg-white dark:bg-[#100C08] p-3 rounded-lg shadow hover:shadow-lg transition"
+            >
+              {typeof skill.icon === "string" ? (
+                <img
+                  src={skill.icon}
+                  alt={`${skill.name} icon`}
+                  className="w-8 h-8"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="w-8 h-8 flex items-center justify-center bg-violet-600 text-white rounded-full text-sm font-semibold">
+                  {skill.icon}%
+                </div>
+              )}
+              <span className="text-gray-900 dark:text-white font-medium text-sm">
+                {skill.name}
+              </span>
+            </div>  
           ))}
+          </div>
+          
         </div>
       </div>
     </section>

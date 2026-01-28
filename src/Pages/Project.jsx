@@ -6,14 +6,23 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 const projects = [
+  // {
+  //   title: "Fullstack Real-Time Chat Application",
+  //   description:
+  //     "A full-stack real-time chat app built with Laravel 12, ReactJS, and PusherJS, featuring instant messaging, Google Drive file storage, and a responsive modern UI.",
+  //   tech: ["Laravel 12", "PusherJS", "MySQL", "Authorization", "REST Api", "ReactJS", "Tailwind"],
+  //   live: "https://chat-app-frontend-six-red.vercel.app",
+  //   github: "https://github.com/nayemislam33046/fullstack-realtime-chat-app/tree/master",
+  //   image: "https://i.ibb.co.com/zW7pTPVS/screen03.jpg",
+  // },
   {
-    title: "Fullstack Real-Time Chat Application",
+    title: "Event Management System",
     description:
-      "A full-stack real-time chat app built with Laravel 12, ReactJS, and PusherJS, featuring instant messaging, Google Drive file storage, and a responsive modern UI.",
-    tech: ["Laravel 12", "PusherJS", "MySQL", "Authorization", "REST Api", "ReactJS", "Tailwind"],
-    live: "https://chat-app-frontend-six-red.vercel.app",
-    github: "https://github.com/nayemislam33046/fullstack-realtime-chat-app/tree/master",
-    image: "https://i.ibb.co.com/zW7pTPVS/screen03.jpg",
+      "A comprehensive event management system built with Laravel and ReactJS, featuring user authentication, event creation",
+    tech: ["Laravel", "ReactJS", "MySQL", "TailwindCSS", "Authorization"],
+    live: "https://eventease-frontend-rho.vercel.app/",
+    github: "https://github.com/nayemislam33046/eventease-project",
+    image: "https://i.imgur.com/65T8ta9.jpeg",
   },
   {
     title: "Simple Small Food App",
@@ -66,16 +75,15 @@ export default function Projects() {
   }, []);
 
   useEffect(() => {
-  const handleKeyDown = (e) => {
-    if (e.key === "Escape") {
-      setSelectedImage(null);
-    }
-  };
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
 
-  window.addEventListener("keydown", handleKeyDown);
-  return () => window.removeEventListener("keydown", handleKeyDown);
-}, []);
-
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <section
@@ -114,20 +122,18 @@ export default function Projects() {
             /> */}
 
             <img
-  src={project.image}
-  alt={project.title}
-  onClick={() => setSelectedImage(project.image)}
-  onError={(e) => {
-    e.target.onerror = null;
-    e.target.src = fallbackImage;
-  }}
-  className="rounded-md mb-4 w-full h-44 object-cover cursor-pointer hover:opacity-90 transition"
-  loading="lazy"
-/>
+              src={project.image}
+              alt={project.title}
+              onClick={() => setSelectedImage(project.image)}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = fallbackImage;
+              }}
+              className="rounded-md mb-4 w-full h-44 object-cover cursor-pointer hover:opacity-90 transition"
+              loading="lazy"
+            />
 
-            <h3 className="text-lg font-semibold mb-2">
-              {project.title}
-            </h3>
+            <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
 
             <p className="text-sm text-gray-800 dark:text-gray-300 mb-3 flex-grow">
               {project.description}
@@ -169,28 +175,27 @@ export default function Projects() {
       </div>
 
       {selectedImage && (
-  <div
-    className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
-    onClick={() => setSelectedImage(null)}
-  >
-    <img
-      src={selectedImage}
-      alt="Project Preview"
-      className="max-w-full max-h-full rounded-lg shadow-2xl"
-      onClick={(e) => e.stopPropagation()}
-    />
+        <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <img
+            src={selectedImage}
+            alt="Project Preview"
+            className="max-w-full max-h-full rounded-lg shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
 
-    {/* Close button */}
-    <button
-      className="absolute top-5 right-5 text-white text-3xl font-bold"
-      onClick={() => setSelectedImage(null)}
-      aria-label="Close image preview"
-    >
-      ×
-    </button>
-  </div>
-)}
-
+          {/* Close button */}
+          <button
+            className="absolute top-5 right-5 text-white text-3xl font-bold"
+            onClick={() => setSelectedImage(null)}
+            aria-label="Close image preview"
+          >
+            ×
+          </button>
+        </div>
+      )}
     </section>
   );
 }

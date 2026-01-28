@@ -30,7 +30,7 @@ const features = [
 
 export default function Service() {
   return (
-    <div className=" py-12 px-4 md:px-16 text-center my-16">
+    <div className=" py-12 px-4 md:px-16 text-center my-8" id='service'>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {features.map((item, idx) => (
           <div
