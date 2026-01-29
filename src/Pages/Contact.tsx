@@ -16,10 +16,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "service_3a2xb1v",       // Service ID
-        "template_04wol1n",      // Template ID
+        "service_3a2xb1v",
+        "template_04wol1n",
         form.current,
-        "yzn4wijoEK6qckiru"      // Public Key
+        "yzn4wijoEK6qckiru"
       )
       .then(
         () => {
@@ -38,7 +38,7 @@ export default function Contact() {
 
   return (
     <div
-      className="p-6 mt-20 md:p-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-xl shadow-xl"
+      className="p-6 mt-20 md:p-10 bg-gradient-to-br from-white via-gray-100 to-white dark:from-[#010B13] dark:via-[#121212] dark:to-[#301934] text-gray-900 dark:text-white rounded-xl shadow-xl"
       id="contact"
     >
       <h2 className="text-2xl font-bold mb-6 text-center">Contact Me</h2>

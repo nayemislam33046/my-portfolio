@@ -7,7 +7,7 @@ import GreenShadow from "../components/ShadowEffect/GreenShadow";
 
 export default function Footer() {
   return (
-    <footer className="dark:bg-gray-900 text-slate-950 dark:text-gray-200 py-12 px-6 md:px-20 mt-20 relative w-full rounded-lg">
+    <footer className="bg-gradient-to-br from-white via-gray-100 to-white dark:from-[#010B13] dark:via-[#121212] dark:to-[#301934] text-slate-950 dark:text-gray-200 py-12 px-6 md:px-20 mt-20 relative w-full rounded-lg">
       {/* Shadows */}
       <div className="absolute bottom-0 right-10 -z-30">
         <PurpleShadow />

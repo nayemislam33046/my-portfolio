@@ -28,7 +28,7 @@ const HomePage = () => {
   }, []);
   return (
     <div
-      className="relative flex items-center justify-center h-[100vh] pt-[100px]"
+      className="relative flex items-center justify-center h-[120vh] sm:h-[100vh] md:h-[70vh] lg:h-[100vh] pt-[10px] sm:pt-[100px]"
       style={{
         backgroundImage: isMd
           ? `linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,1.9)), url('/coading_1.webp')`
@@ -54,6 +54,7 @@ const HomePage = () => {
             <Typewriter
               words={[
                 "ReactJS Developer",
+                "NextJS Developer",
                 "Laravel Developer",
                 "Full-Stack Developer",
               ]}
