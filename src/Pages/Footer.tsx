@@ -74,7 +74,7 @@ export default function Footer() {
           <div className="bg-violet-600 dark:bg-violet-800 text-white sm:p-6 p-3 rounded-lg flex items-center sm:gap-4 gap-2">
             <MdEmail size={28} />
             <span className="break-all text-[12px] sm:text-sm lg:text-base">
-              {"nayemtruthness" + "@gmail.com"}
+              {"nadimmahmudnayem2@gmail.com"}
             </span>
           </div>
         </div>

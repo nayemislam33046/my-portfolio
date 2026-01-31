@@ -5,20 +5,29 @@ import GreenShadow from "../components/ShadowEffect/GreenShadow";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const projects = [
-  // {
-  //   title: "Fullstack Real-Time Chat Application",
-  //   description:
-  //     "A full-stack real-time chat app built with Laravel 12, ReactJS, and PusherJS, featuring instant messaging, Google Drive file storage, and a responsive modern UI.",
-  //   tech: ["Laravel 12", "PusherJS", "MySQL", "Authorization", "REST Api", "ReactJS", "Tailwind"],
-  //   live: "https://chat-app-frontend-six-red.vercel.app",
-  //   github: "https://github.com/nayemislam33046/fullstack-realtime-chat-app/tree/master",
-  //   image: "https://i.ibb.co.com/zW7pTPVS/screen03.jpg",
-  // },
+interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  live?: string;
+  github: string;
+  image: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Alhaj Shamsul Hoque Foundation NGO",
+    description:
+      "A Frontend Web application for a non-profit organization with donation features.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    live: "https://ashfngo.netlify.app/",
+    github: "https://github.com/nayemislam33046/ngo-client-project",
+    image: "https://i.imgur.com/1IqLUCC.jpeg",
+  },
   {
     title: "Event Management System",
     description:
-      "A comprehensive event management system built with Laravel and ReactJS, featuring user authentication, event creation",
+      "A comprehensive event management system built with Laravel and ReactJS, featuring user authentication, event creation , admin login info is email:admin@gmail.com password:123456789",
     tech: ["Laravel", "ReactJS", "MySQL", "TailwindCSS", "Authorization"],
     live: "https://eventease-frontend-rho.vercel.app/",
     github: "https://github.com/nayemislam33046/eventease-project",
@@ -63,7 +72,7 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     Aos.init({
@@ -75,7 +84,7 @@ export default function Projects() {
   }, []);
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setSelectedImage(null);
       }
@@ -84,6 +93,11 @@ export default function Projects() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.onerror = null; // prevents infinite loop
+    e.currentTarget.src = fallbackImage;
+  };
 
   return (
     <section
@@ -99,10 +113,7 @@ export default function Projects() {
       <h2 className="text-2xl font-bold mb-10 text-center">Projects</h2>
 
       <div
-        className="grid gap-6
-        grid-cols-1
-        sm:grid-cols-2
-        xl:grid-cols-3"
+        className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3"
         data-aos="fade-up"
       >
         {projects.map((project, index) => (
@@ -110,25 +121,11 @@ export default function Projects() {
             key={index}
             className="border border-gray-300 dark:border-gray-700 p-5 rounded-lg bg-white dark:bg-gray-900 hover:shadow-lg transition flex flex-col"
           >
-            {/* <img
-              src={project.image}
-              alt={project.title}
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = fallbackImage;
-              }}
-              className="rounded-md mb-4 w-full h-44 object-cover"
-              loading="lazy"
-            /> */}
-
             <img
               src={project.image}
               alt={project.title}
               onClick={() => setSelectedImage(project.image)}
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = fallbackImage;
-              }}
+              onError={handleImageError}
               className="rounded-md mb-4 w-full h-44 object-cover cursor-pointer hover:opacity-90 transition"
               loading="lazy"
             />
