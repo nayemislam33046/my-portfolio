@@ -34,6 +34,24 @@ const projects: Project[] = [
     image: "https://i.imgur.com/65T8ta9.jpeg",
   },
   {
+    title: "Movie & Series Explorer Web App",
+    description:
+      "A movie and series exploration web application built using ReactJS with CSS and SCSS for styling. The project focuses on fetching and displaying dynamic movie data, component-based architecture, and responsive UI design. This application was developed as a practice project to strengthen understanding of React fundamentals, state management, and API integration.",
+    tech: ["ReactJS", "Css","SCSS"],
+    live: "https://movie-site-iota-one.vercel.app/",
+    github: "https://github.com/nayemislam33046/movie-site",
+    image: "https://i.imgur.com/taFdHxf.png",
+  },
+  {
+    title: "Personal Portfolio Website for Client",
+    description:
+      "A responsive personal portfolio website built for a client to showcase skills, projects, and contact information. Developed using ReactJS and Tailwind CSS with a clean UI, smooth navigation, and mobile-friendly design.",
+    tech: ["ReactJS", "Tailwind"],
+    live: "https://alif-sorif-portfolio.vercel.app",
+    github: "https://github.com/nayemislam33046/alif_sorif_portfolio",
+    image: "https://i.imgur.com/nvmNs4D.png",
+  },
+  {
     title: "Simple Small Food App",
     description:
       "A minimal and responsive food ordering app built with ReactJS and TailwindCSS.",
