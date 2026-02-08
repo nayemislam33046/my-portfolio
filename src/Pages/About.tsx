@@ -22,7 +22,7 @@ export default function About() {
 
   return (
     <motion.section
-      className="relative px-4 sm:py-16 sm:px-12 lg:px-24 mt-[30px] md:mt-0 min-h-screen md:h-[90vh] flex items-center justify-center"
+      className="relative px-4 sm:py-16 md:py-10 sm:px-12 lg:px-24 mt-[30px] md:mt-0 md:h-[60vh] flex items-center justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

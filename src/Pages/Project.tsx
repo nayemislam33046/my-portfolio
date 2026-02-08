@@ -59,16 +59,7 @@ const projects: Project[] = [
     live: "https://responsive-site-gold-theta.vercel.app",
     github: "https://github.com/nayemislam33046/Responsive-site.git",
     image: "https://i.imgur.com/EQjvg8c.jpeg",
-  },
-  {
-    title: "Laravel Task Manager",
-    description:
-      "Task manager built with Laravel & Blade including authentication and CRUD.",
-    tech: ["Laravel", "Blade", "MySQL", "TailwindCSS"],
-    live: "https://nayem.kesug.com/",
-    github: "https://github.com/nayemislam33046/task-manager",
-    image: "https://i.imgur.com/HjkUkg3.jpeg",
-  },
+  }
 ];
 
 export default function Projects() {
@@ -95,7 +86,7 @@ export default function Projects() {
   }, []);
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.currentTarget.onerror = null; // prevents infinite loop
+    e.currentTarget.onerror = null; 
     e.currentTarget.src = fallbackImage;
   };
 
