@@ -25,6 +25,15 @@ const projects: Project[] = [
     image: "https://i.imgur.com/1IqLUCC.jpeg",
   },
   {
+    title: "Ababil Agency Website",
+    description:
+      "A professional agency website designed to showcase services, pricing plans, and brand identity with a fast, responsive, and user-friendly interface using Next.js and Tailwind CSS.",
+    tech: ["NextJS", "TailwindCSS"],
+    live: "https://ababil-agency-project.vercel.app",
+    github: "https://github.com/nayemislam33046/ababil-agency-project",
+    image: "https://i.imgur.com/sctWG8V.jpeg",
+  },
+  {
     title: "Event Management System",
     description:
       "A comprehensive event management system built with Laravel and ReactJS, featuring user authentication, event creation , admin login info is email:admin@gmail.com password:123456789",
